@@ -1,0 +1,10 @@
+{
+  "name": "Auto wax login/signup close popup",
+  "description": "Timer de 10s pour login et signup",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"]
+  },
+    "permissions": ["tabs"]
+}
