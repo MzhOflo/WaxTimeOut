@@ -6,7 +6,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-chrome.runtime.onStartup.addListener(() => {
+chrome.runtime.onConnect.addListener(() => {
   setInterval(function(){
   chrome.tabs.query({},function(tabs){     
     tabs.forEach(async function(tab){
@@ -18,7 +18,7 @@ chrome.runtime.onStartup.addListener(() => {
 			console.log(tabUrl);
 			console.log("Timer 10sec");
 			await sleep(10000);
-			chrome.tabs.remove(tabId);
+			chrome.tabs.remove(tabId); 
 			chrome.tabs.reload(tabIdScript);
 			console.log("Done");
 		}
