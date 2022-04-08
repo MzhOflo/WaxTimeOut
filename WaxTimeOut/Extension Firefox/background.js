@@ -6,7 +6,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-browser.runtime.onInstalled.addListener(() => {
+browser.runtime.onStartup.addListener(() => {
   setInterval(function(){
   browser.tabs.query({},function(tabs){     
     tabs.forEach(async function(tab){

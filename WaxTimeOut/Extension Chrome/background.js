@@ -6,15 +6,14 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-chrome.runtime.onInstalled.addListener(() => {
+chrome.runtime.onStartup.addListener(() => {
   setInterval(function(){
   chrome.tabs.query({},function(tabs){     
     tabs.forEach(async function(tab){
 		var tabId = tab.id;
 		var tabUrl = tab.url;
-		var tabIdScript;
 		if (tabUrl == urlScript)
-			tadIdScript = tabId;
+			var tabIdScript = tabId;
 		else if (tabUrl == url || tabUrl == url2 ) {
 			console.log(tabUrl);
 			console.log("Timer 10sec");
